@@ -13,6 +13,7 @@ use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\Restriction\DeletedRestriction;
 use TYPO3\CMS\Core\DataHandling\DataHandler;
+use TYPO3\CMS\Core\Domain\Repository\PageRepository;
 use TYPO3\CMS\Core\Http\HtmlResponse;
 use TYPO3\CMS\Core\Imaging\Icon;
 use TYPO3\CMS\Core\Imaging\IconFactory;
@@ -22,6 +23,7 @@ use TYPO3\CMS\Core\Type\Bitmask\Permission;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\MathUtility;
 use TYPO3\CMS\Fluid\View\StandaloneView;
+use TYPO3\CMS\Recordlist\Browser\DatabaseBrowser;
 
 /**
  * "New page tree" controller
@@ -141,9 +143,9 @@ class NewPagetreeController
 
             // Display result:
             if ($isV11) {
-                // todo check if this is correct at all
                 $tree = GeneralUtility::makeInstance(ElementBrowserPageTreeView::class);
-                $tree->init(' AND pages.doktype < 199 AND pages.hidden = "0"');
+                $tree->init(' AND pages.doktype < ' . PageRepository::DOKTYPE_RECYCLER . ' AND pages.hidden = "0"');
+                $tree->setLinkParameterProvider(GeneralUtility::makeInstance(DatabaseBrowser::class));
                 $tree->thisScript = '#';
             } else {
                 /** @var BrowseTreeView $tree */
