@@ -4,5 +4,8 @@ services:
     autoconfigure: true
     public: false
 
-  MichielRoos\WizardCrpagetree\:
-    resource: '../Classes/*'
+  MichielRoos\WizardCrpagetree\NewPagetreeController:
+    tags: ['backend.controller']
+
+  MichielRoos\WizardCrpagetree\ContextMenu\ItemProvider:
+    tags: ['backend.contextmenu.itemprovider']

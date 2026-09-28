@@ -5,7 +5,7 @@
     data-namespace-typo3-fluid="true"
 >
 
-<f:layout name="Module" />
+<f:layout name="Module"/>
 
 <f:section name="Content">
 <h1>
@@ -37,6 +37,13 @@
                             message="{f:translate(key:'noPagesCreated.message', extensionName:'wizard_crpagetree')}"
                             state="1"
                         />
+                        <f:if condition="{dataHandlerErrors}">
+                            <div class="alert alert-danger">
+                                <f:for each="{dataHandlerErrors}" as="dataHandlerError">
+                                    {dataHandlerError}<br />
+                                </f:for>
+                            </div>
+                        </f:if>
                     </f:else>
                 </f:if>
                 <f:if condition="{visiblePages}">

@@ -6,6 +6,6 @@ return [
         'backend.contextmenu',
     ],
     'imports' => [
-        '@michielroos/wizardcrpagetree/' => 'EXT:wizard_crpagetree/Resources/Public/JavaScript/',
+        '@typo3/wizard-crpagetree/' => 'EXT:wizard_crpagetree/Resources/Public/JavaScript/',
     ],
 ];

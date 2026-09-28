@@ -1,7 +1,5 @@
 <?php
-
 declare(strict_types=1);
-
 namespace MichielRoos\WizardCrpagetree\ContextMenu;
 
 use TYPO3\CMS\Backend\ContextMenu\ItemProviders\PageProvider;
@@ -80,7 +78,7 @@ class ItemProvider extends PageProvider
             $uriBuilder = GeneralUtility::makeInstance(UriBuilder::class);
             $attributes += [
                 'data-page-new-tree-url' => (string)$uriBuilder->buildUriFromRoute('pagetree_new', ['id' => $this->record['uid']]),
-                'data-callback-module' => '@michielroos/wizardcrpagetree/context-menu-actions',
+                'data-callback-module'   => '@typo3/wizard-crpagetree/context-menu-actions',
             ];
         }
         return $attributes;

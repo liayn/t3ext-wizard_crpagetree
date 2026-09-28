@@ -9,6 +9,11 @@
 			"role": "Developer"
 		},
 		{
+			"name": "Markus Timtner",
+			"role": "Developer",
+			"homepage": "https://timtner.tech/"
+		},
+		{
 			"name": "Reelworx GmbH",
 			"role": "Maintainer",
 			"homepage": "https://reelworx.at/"
@@ -22,7 +27,8 @@
 	],
 	"require": {
 		"php": "^8.4",
-		"typo3/cms-backend": "^12.4 || ^13.4"
+		"typo3/cms-backend": "^12.4 || ^13.4 || ^14.3",
+		"typo3/cms-fluid": "^12.4 || ^13.4 || ^14.3"
 	},
 	"autoload": {
 		"psr-4": {

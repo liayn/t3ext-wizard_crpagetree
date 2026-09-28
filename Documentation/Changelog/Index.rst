@@ -6,6 +6,19 @@
 Change log
 ==========
 
+Version 7.1.0
+-------------
+
+* Added TYPO3 v14 compatibility
+* Migrated context menu JavaScript to an ES6 module (RequireJS/AMD removed)
+* Migrated module rendering to the ``ModuleTemplate`` API (``assignMultiple()`` + ``renderResponse()``);
+  replaced the removed Fluid ``StandaloneView`` / ``ModuleTemplate::setContent()`` workflow
+* Replaced removed ``Icon::SIZE_*`` constant with the ``IconSize`` enum (cross-version guarded)
+* Removed context-sensitive help button (``ButtonBar::makeHelpButton()``, removed in TYPO3 v13)
+* Surface DataHandler errors in the module instead of failing silently
+* Removed obsolete context menu registration via ``$GLOBALS`` (auto-registration via ``Services.yaml``)
+* Removed unused BackendControllerHook
+
 Version 7.0.0
 -------------
 
