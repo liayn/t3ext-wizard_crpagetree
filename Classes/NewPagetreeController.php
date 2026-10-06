@@ -57,7 +57,7 @@ class NewPagetreeController
         $pageRecord = BackendUtility::readPageAccess($pageUid, $backendUser->getPagePermsClause(Permission::PAGE_SHOW));
         if (!is_array($pageRecord)) {
             // User has no permission on parent page, should not happen, just render an empty page
-            return $this->moduleTemplate->renderResponse();
+            return $this->moduleTemplate->renderResponse('NewPagetree/Main');
         }
 
         // Doc header handling

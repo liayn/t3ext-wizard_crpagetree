@@ -85,7 +85,6 @@ class ItemProvider extends PageProvider
     {
         $attributes = [];
         if ($itemName === 'pagesNewTree') {
-            /** @var Uribuilder $uriBuilder */
             $uriBuilder = GeneralUtility::makeInstance(UriBuilder::class);
             $attributes += [
                 'data-page-new-tree-url' => (string)$uriBuilder->buildUriFromRoute('pagetree_new', ['id' => $this->record['uid'] ?? 0]),
