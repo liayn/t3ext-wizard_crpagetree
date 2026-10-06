@@ -6,6 +6,17 @@
 Change log
 ==========
 
+Version 7.1.1
+-------------
+
+* Minor fixes
+
+Version 7.1.0
+-------------
+
+* Added support TYPO3 v14
+
+
 Version 7.0.0
 -------------
 
