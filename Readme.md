@@ -2,6 +2,8 @@
 
 This extension provides functionality to mass-create page(trees) in TYPO3.
 
+
+
 |                  | URL                                                             |
 |------------------|-----------------------------------------------------------------|
 | **Repository:**  | https://github.com/liayn/t3ext-wizard_crpagetree                |
@@ -13,11 +15,11 @@ This extension provides functionality to mass-create page(trees) in TYPO3.
 
 | Extension        | TYPO3   | PHP       | Support / Development      |
 |------------------|---------|-----------|----------------------------|
-| 7.x (dev-master) | 13 - 13 | 8.2 - 8.4 | bugfixes, security updates |
+| 7.x (dev-master) | 13 - 14 | 8.2 - 8.5 | bugfixes, security updates |
 | 6.x              | 11 - 12 | 8.1 - 8.4 | security updates           |
 | 5.x              | 10 - 11 | 7.4 - 8.2 | end of life                |
 
 ## Thanks to our sponsors
 
 * [Reelworx](https://reelworx.at)
-* M. Timtner
+* [M. Timtner](https://timtner.tech)

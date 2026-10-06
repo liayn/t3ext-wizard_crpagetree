@@ -35,18 +35,33 @@ class ItemProvider extends PageProvider
         $this->initialize();
         $this->initDisabledItems();
 
-        if (isset($items['info'])) {
-            // renders an item based on the configuration from $this->itemsConfiguration
-            $localItems = $this->prepareItems($this->itemsConfiguration);
+        // renders an item based on the configuration from $this->itemsConfiguration
+        $localItems = $this->prepareItems($this->itemsConfiguration);
+        if ($localItems === []) {
+            return $items;
+        }
+
+        // The 'info' item is not available on the root page, so fall back to the 'new' item
+        $anchor = null;
+        foreach (['info', 'new'] as $candidate) {
+            if (isset($items[$candidate])) {
+                $anchor = $candidate;
+                break;
+            }
+        }
+
+        if ($anchor !== null) {
             //finds a position of the item after which this item should be added
-            $position = (int)array_search('info', array_keys($items), true);
+            $position = (int)array_search($anchor, array_keys($items), true);
 
             // slices array into two parts
             $beginning = array_slice($items, 0, $position + 1, true);
-            $end = array_slice($items, $position, null, true);
+            $end = array_slice($items, $position + 1, null, true);
 
             // adds custom item in the correct position
             $items = $beginning + $localItems + $end;
+        } else {
+            $items += $localItems;
         }
         //passes array of items to the next item provider
         return $items;
@@ -79,7 +94,7 @@ class ItemProvider extends PageProvider
             /** @var Uribuilder $uriBuilder */
             $uriBuilder = GeneralUtility::makeInstance(UriBuilder::class);
             $attributes += [
-                'data-page-new-tree-url' => (string)$uriBuilder->buildUriFromRoute('pagetree_new', ['id' => $this->record['uid']]),
+                'data-page-new-tree-url' => (string)$uriBuilder->buildUriFromRoute('pagetree_new', ['id' => $this->record['uid'] ?? 0]),
                 'data-callback-module' => '@michielroos/wizardcrpagetree/context-menu-actions',
             ];
         }
