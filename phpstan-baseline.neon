@@ -1,0 +1,19 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '''
+				#^Call to deprecated method makeLinkButton\(\) of class TYPO3\\CMS\\Backend\\Template\\Components\\ButtonBar\:
+				since v14, will be removed in v15\. Inject ComponentFactory and use ComponentFactory\:\:createLinkButton\(\) instead\.$#
+			'''
+			identifier: method.deprecated
+			count: 1
+			path: Classes/NewPagetreeController.php
+
+		-
+			message: '''
+				#^Call to deprecated method setMetaInformation\(\) of class TYPO3\\CMS\\Backend\\Template\\Components\\DocHeaderComponent\:
+				since v14, will be removed in v15\. Use setPageBreadcrumb\(\) instead\.$#
+			'''
+			identifier: method.deprecated
+			count: 1
+			path: Classes/NewPagetreeController.php

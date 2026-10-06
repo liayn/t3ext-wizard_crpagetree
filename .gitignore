@@ -5,5 +5,5 @@
 !/.Build/.env
 !/.Build/docker-compose.yml
 /.php-cs-fixer.cache
-/composer.lock
 /docker-compose.override.yaml
+/var

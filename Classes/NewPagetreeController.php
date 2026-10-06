@@ -87,7 +87,7 @@ class NewPagetreeController
             /** @var array{pageTree: ?string, createInListEnd: ?bool, hidePages: ?bool, hidePagesInMenus: ?bool} $parsedBody */
             $parsedBody = $request->getParsedBody();
             $newPagesData = $parsedBody['pageTree'] ?? '';
-            if (!empty($newPagesData)) {
+            if ($newPagesData !== '') {
                 $newPagesData = explode("\r\n", $newPagesData);
                 $newPagesData = $this->filterComments($newPagesData);
 
@@ -198,9 +198,8 @@ class NewPagetreeController
             }
         }
 
-        if (!empty($commandArray)) {
+        if ($commandArray) {
             $pagesCreated = true;
-            /** @var DataHandler $dataHandler */
             $dataHandler = GeneralUtility::makeInstance(DataHandler::class);
             // Set default TCA values specific for the user
             $backendUser = $this->getBackendUser();

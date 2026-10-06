@@ -31,6 +31,9 @@
 		"typo3/cms-backend": "^13.4 || ^14.3",
 		"typo3/cms-fluid": "^13.4 || ^14.3"
 	},
+	"require-dev": {
+		"typo3/minimal": "^14.3"
+	},
 	"autoload": {
 		"psr-4": {
 			"MichielRoos\\WizardCrpagetree\\": "Classes"
