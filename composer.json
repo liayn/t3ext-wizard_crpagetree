@@ -14,6 +14,11 @@
 			"homepage": "https://reelworx.at/"
 		}
 	],
+	"support": {
+		"docs": "https://docs.typo3.org/p/reelworx/wizard-crpagetree/main/en-us/",
+		"source": "https://github.com/liayn/t3ext-wizard_crpagetree",
+		"issues": "https://github.com/liayn/t3ext-wizard_crpagetree/issues"
+	},
 	"keywords": [
 		"wizard",
 		"typo3",
@@ -34,13 +39,18 @@
 	"extra": {
 		"typo3/cms": {
 			"web-dir": ".Build/public",
-			"extension-key": "wizard_crpagetree"
+			"extension-key": "wizard_crpagetree",
+			"version": "7.1.0",
+			"Package": {
+				"providesPackages": {}
+			}
 		},
 		"branch-alias": {
 			"dev-master": "7.x-dev"
 		}
 	},
 	"config": {
+		"lock": false,
 		"vendor-dir": ".Build/vendor",
 		"allow-plugins": {
 			"typo3/cms-composer-installers": true,
